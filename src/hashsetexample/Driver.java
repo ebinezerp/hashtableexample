@@ -30,6 +30,12 @@ public class Driver {
 			System.out.println(iterator.next()+"   ");
 		}
 		
+		
+		System.out.println("Enter the element to search");
+		
+		  System.out.println(myHashSet.get(sc.nextInt()));
+		
+
 	}
 		
 }

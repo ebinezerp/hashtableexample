@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -129,8 +130,16 @@ public class MyHashSet<E> implements Set<E> {
 	}
 
 	private void resize() {
+		
+		
+		
+		
+		
 		if (noOfElements + 1 > (150 * this.size()) / 100) {
 			this.size = this.size() + 10;
+			
+			
+			
 			Hashtable<Integer, Bucket<E>> hashtable = new Hashtable<Integer, Bucket<E>>(this.size);
 
 			for (Entry<Integer, Bucket<E>> entry : this.hashtable.entrySet()) {
@@ -141,5 +150,24 @@ public class MyHashSet<E> implements Set<E> {
 
 		}
 	}
+	
+	
+	public E get(E e)
+	{
+	      LinkedList<E> list= hashtable.get(hashing(e));
+	      
+	      for(E ele:list)
+	      {
+	    	  if(ele.equals(e))
+	    	  {
+	    		  return ele;
+	    	  }
+	      }
+	      
+	      return null;
+	      
+	}
+	
+
 
 }
